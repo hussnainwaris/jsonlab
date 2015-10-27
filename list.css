@@ -1,0 +1,60 @@
+#firstlist {
+  height:100px;
+   width:18%;
+overflow : auto;
+}
+
+#seclist {
+  height:100px; width:18%;
+ overflow: auto;
+}
+
+
+.listen{
+  overflow: auto;
+
+}
+
+.body {
+  height:100%; width:100%;
+}
+
+.left {
+  border: 5px solid gray;
+  height:150px; width:50%;
+  position:relative;
+  float:left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+    border: 5px solid gray;
+
+  height:150px; width:50%;
+  position:relative;
+  float:left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.square{
+width: 25px;
+height: 30px;
+
+}
+
+.main {
+  height:100%; width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.listen {
+  cursor: pointer;
+}

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+   <html>
+        <head>
+ <link rel = "stylesheet" type = "text/css" href = "list.css" ></script>    
+<script>
+	function requestColors() {
+		var data;
+
+		var request = new XMLHttpRequest();
+		request.onload = reqListener;
+		request.open("get", "colorMap.json", true);
+		request.send();
+
+		function reqListener(e) {
+			data = JSON.parse(this.responseText);
+			
+			var i;
+
+			for (i = 0; i < data.length; i++)
+			{
+				var li = document.createElement("li");
+				li.className = "listen";
+				li.id = "firstlist" + i;
+				var t = document.createTextNode(data[i].color);
+				li.appendChild(t);
+				document.getElementById("firstlist").appendChild(li);
+
+				var sqr= document.createElement("div");
+                sqr.className = "square";
+                sqr.style.background=data[i].value;
+                li.appendChild(sqr);
+
+			}
+
+			for (i = 0; i < data.length; i++)
+			{
+				var li = document.createElement("li");
+				li.className = "listen";
+				li.id = "seclist" + i;
+				var t = document.createTextNode(data[i].value);
+				li.appendChild(t);
+				document.getElementById("seclist").appendChild(li);
+
+			}
+		}
+	}
+	
+	window.onload = requestColors;
+</script>
+</head>
+<body>
+<div class="main">
+
+	<div class="left" >
+		<ul id="firstlist">
+		</ul>
+	</div>
+
+	<div class="right" >
+		<ul id="seclist">
+		</ul>
+	</div>
+</div>
+</body>
+</html>
